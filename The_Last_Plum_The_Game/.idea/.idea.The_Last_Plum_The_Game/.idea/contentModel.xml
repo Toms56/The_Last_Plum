@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\tanne\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\tanne\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_The_Last_Plum_The_Game.173045602.00" t="ExcludeRecursive" />
+    <e p="D:\TheLastPlum\The_Last_Plum\The_Last_Plum_The_Game" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="DOTween" t="Include">
+          <e p="Modules" t="Include">
+            <e p="DOTweenModuleAudio.cs" t="Include" />
+            <e p="DOTweenModulePhysics.cs" t="Include" />
+            <e p="DOTweenModulePhysics2D.cs" t="Include" />
+            <e p="DOTweenModuleSprite.cs" t="Include" />
+            <e p="DOTweenModuleUI.cs" t="Include" />
+            <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+            <e p="DOTweenModuleUtils.cs" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Characters" t="Include">
+            <e p="Ennemy" t="Include">
+              <e p="EnnemySpawner.cs" t="Include" />
+            </e>
+            <e p="Player.cs" t="Include" />
+            <e p="Test" t="Include">
+              <e p="EnnemyTest.cs" t="Include" />
+            </e>
+            <e p="Tree" t="Include">
+              <e p="CentralTree.cs" t="Include" />
+            </e>
+          </e>
+          <e p="GameplayManager.cs" t="Include" />
+          <e p="MenuManager.cs" t="Include" />
+          <e p="Shoot" t="Include">
+            <e p="PlayerBullet.cs" t="Include" />
+            <e p="PlayerCanon.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="The_Last_Plum_The_Game.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
