@@ -7,14 +7,14 @@ public class EnnemyTest : MonoBehaviour
 {
 
     private float healthPts = 2;
-    public Transform target;
-
-    public GameObject actualTarget;
+    
+    private GameObject actualTarget;
+    public GameObject nextTarget;
     public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        actualTarget = GameplayManager.Instance.defenseTower;
     }
 
     // Update is called once per frame
@@ -23,6 +23,13 @@ public class EnnemyTest : MonoBehaviour
         if (Vector3.Distance(transform.position, actualTarget.transform.position) > 0.1f)
         {
             Vector3 dir = actualTarget.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.Translate(Vector3.right * Time.deltaTime);
+        }
+        else if (actualTarget == null)
+        {
+            Vector3 dir = nextTarget.transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.Translate(Vector3.right * Time.deltaTime);

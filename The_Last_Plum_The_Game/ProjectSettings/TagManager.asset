@@ -8,6 +8,7 @@ TagManager:
   - Ennemy
   - PlayerBullet
   - CentralTree
+  - Money
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - PostProcessing
   - Player
   - Bullet
-  - 
-  - 
+  - CentralTree
+  - DefenseTower
   - 
   - 
   - 

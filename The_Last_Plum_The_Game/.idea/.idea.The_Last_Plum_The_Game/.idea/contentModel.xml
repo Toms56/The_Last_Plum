@@ -20,8 +20,18 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Characters" t="Include">
+            <e p="DefenseTower" t="Include">
+              <e p="DefenseTower.cs" t="Include" />
+              <e p="TowerCanon.cs" t="Include" />
+            </e>
             <e p="Ennemy" t="Include">
-              <e p="EnnemySpawner.cs" t="Include" />
+              <e p="InvisibleEnnemy.cs" t="Include" />
+              <e p="Spawners" t="Include">
+                <e p="EnemySpawner2.cs" t="Include" />
+                <e p="EnemySpawner3.cs" t="Include" />
+                <e p="EnemySpawner4.cs" t="Include" />
+                <e p="EnnemySpawner.cs" t="Include" />
+              </e>
             </e>
             <e p="Player.cs" t="Include" />
             <e p="Test" t="Include">
@@ -29,13 +39,22 @@
             </e>
             <e p="Tree" t="Include">
               <e p="CentralTree.cs" t="Include" />
+              <e p="HealthBarTree.cs" t="Include" />
+              <e p="Spawners" t="Include">
+                <e p="TreeSpawner1.cs" t="Include" />
+                <e p="TreeSpawner2.cs" t="Include" />
+                <e p="TreeSpawner3.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="GameplayManager.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
           <e p="Shoot" t="Include">
-            <e p="PlayerBullet.cs" t="Include" />
-            <e p="PlayerCanon.cs" t="Include" />
+            <e p="PlayerShoot" t="Include">
+              <e p="PlayerBullet.cs" t="Include" />
+              <e p="PlayerCanon.cs" t="Include" />
+            </e>
+            <e p="TowerBullet.cs" t="Include" />
           </e>
         </e>
       </e>

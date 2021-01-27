@@ -3,23 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CentralTree : MonoBehaviour
 {
 
     public Camera mainCam;
+    
+    //Health
     [SerializeField]
     private float healthPts = 25;
+
+    public bool loseHp;
+
+    public Slider healthBarTree;
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthBarTree.value = 25;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*if (loseHp)
+        {
+            healthBarTree.value -= 1;
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,6 +38,19 @@ public class CentralTree : MonoBehaviour
         {
             Destroy(other.gameObject);
             healthPts -= 1;
+            healthBarTree.value -= 1;
+            mainCam.DOShakePosition(0.8f, 0.3f);
+            if (healthPts <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+        if (other.gameObject.tag == "InvisibleEnemy")
+        {
+            Destroy(other.gameObject);
+            healthPts -= 1;
+            healthBarTree.value -= 1;
             mainCam.DOShakePosition(0.8f, 0.3f);
             if (healthPts <= 0)
             {
