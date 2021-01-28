@@ -5,17 +5,42 @@ using UnityEngine;
 public class TowerBullet : MonoBehaviour
 {
     private GameplayManager gameplayManager;
-    // Start is called before the first frame update
-    void Start()
+    private Transform enemyTarget;
+
+    public GameObject impactEffet;
+    public float speed = 70f;
+
+    public void Seek(Transform _enemyTarget)
     {
-        
+        enemyTarget = _enemyTarget;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = gameplayManager.ennemy.transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        if (enemyTarget == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Vector3 dir = enemyTarget.position - transform.position;
+
+        float distanceThisFrame = speed * Time.deltaTime; // distance à effectuer sur une image
+        
+        if (dir.magnitude <= distanceThisFrame) //dir.magnitude représente la distance entre la balle et l'enemy
+        {
+            HitTarget();
+            return;
+        }
+        
+        transform.Translate(dir.normalized * distanceThisFrame, Space.World); //normaliser sert à garder la même vitesse tout au long du parcour de l'objet
+    }
+
+    void HitTarget()
+    {
+        GameObject effectIns = (GameObject) Instantiate(impactEffet, transform.position, transform.rotation);
+        Destroy(effectIns, 2f);
+        Destroy(gameObject);
     }
 }

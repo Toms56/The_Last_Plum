@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8529924135689609630}
   m_Layer: 12
   m_Name: Tour1 1
-  m_TagString: Untagged
+  m_TagString: DefenseTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,4 +141,3 @@ MonoBehaviour:
   healthPts: 4
   healthBarTower: {fileID: 0}
   isShooting: 0
-  towerBullet: {fileID: 0}

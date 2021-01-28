@@ -48,6 +48,9 @@
             </e>
           </e>
           <e p="GameplayManager.cs" t="Include" />
+          <e p="Map" t="Include">
+            <e p="HideColliderColor.cs" t="Include" />
+          </e>
           <e p="MenuManager.cs" t="Include" />
           <e p="Shoot" t="Include">
             <e p="PlayerShoot" t="Include">

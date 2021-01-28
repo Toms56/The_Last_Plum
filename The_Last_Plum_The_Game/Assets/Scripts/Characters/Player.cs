@@ -7,6 +7,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    //Heal 
+    private float playerHealthPts = 2;
+    Color willDeath = Color.red;
+    
     private GameplayManager gameplayManager;
     [SerializeField]
     Transform target;
@@ -47,6 +51,12 @@ public class Player : MonoBehaviour
            gameplayManager.defenseTowers.Add(defenseTowerObject);
            currencyFund -= 4;
         }
+
+        if (playerHealthPts <= 0)
+        {
+            Destroy(gameObject);
+            StartCoroutine(WaitForSpawn());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -56,5 +66,17 @@ public class Player : MonoBehaviour
             currencyFund += 1;
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            playerHealthPts -= 1;
+            Destroy(other.gameObject);
+        }
+    }
+
+    IEnumerator WaitForSpawn()
+    {
+        yield return new WaitForSeconds(5);
+        Instantiate(gameObject, transform.position, transform.rotation);
     }
 }

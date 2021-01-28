@@ -9,7 +9,9 @@ public class CentralTree : MonoBehaviour
 {
 
     public Camera mainCam;
-    
+
+    [SerializeField]
+    private bool deadTree;
     //Health
     [SerializeField]
     private float healthPts = 25;
@@ -26,10 +28,12 @@ public class CentralTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (loseHp)
+        if (healthPts <= 0 == !deadTree)
         {
-            healthBarTree.value -= 1;
-        }*/
+            deadTree = true;
+            Destroy(gameObject);
+            GameplayManager.Instance.ShowGameOver();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -1,14 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager Instance;
     public GameObject defenseTower;
-    public GameObject ennemy;
+    public GameObject enemy;
+    public GameObject centralTree;
     public List<GameObject>defenseTowers = new List<GameObject>();
     public List<GameObject>enemies = new List<GameObject>();
+    
+    //Panel Management
+    public GameObject panelGameOver;
+
+    public GameObject panelWonLevel;
+
     
     void Awake()
     {
@@ -21,17 +29,27 @@ public class GameplayManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
+    
+    public void ShowGameOver()
     {
-        
+        panelGameOver.SetActive(true);
     }
     
-
-    // Update is called once per frame
-    void Update()
+    public void ShowWonLevel()
     {
-        
+        panelWonLevel.SetActive(true);
     }
+    
+    public void onClick_Retry()
+    {
+        SceneManager.LoadScene(1);
+    }
+    
+    public void exitGame()
+    {
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+        Debug.Log("Game is exiting");
+    }
+    
 }
