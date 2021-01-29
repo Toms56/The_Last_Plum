@@ -146,7 +146,7 @@ MonoBehaviour:
   speed: 1
   actualTarget: {fileID: 8160109890418141890, guid: 42f36fc22c7a8cc4b8a9d7feeda0bfb1,
     type: 3}
-  healthPts: 8
+  healthPts: 12
   wayPoints:
   - {fileID: 8160109890418141890, guid: 42f36fc22c7a8cc4b8a9d7feeda0bfb1, type: 3}
   - {fileID: 3767502052176969957, guid: 86384e3415293b649be4f1dc4f4729cc, type: 3}

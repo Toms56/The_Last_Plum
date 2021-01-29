@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    
+    public void OnClick_Mute() 
+    { 
+        AudioListener.pause = !AudioListener.pause;
+    }
 
     public void onClick_Menu()
     {

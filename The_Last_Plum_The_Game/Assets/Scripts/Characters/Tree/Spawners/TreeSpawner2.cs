@@ -11,7 +11,7 @@ public class TreeSpawner2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnPowerUp",6f,10f);
+        InvokeRepeating("SpawnPowerUp",5f,8f);
     }
 
 

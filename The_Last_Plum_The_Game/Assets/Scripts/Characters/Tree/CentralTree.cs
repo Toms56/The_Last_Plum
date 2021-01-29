@@ -9,12 +9,7 @@ public class CentralTree : MonoBehaviour
 {
 
     public Camera mainCam;
-
-    [SerializeField]
-    //private bool deadTree;
-    //Health
     
-    //public static float healthPtsTree = 10;
     public float healthPtsTree = 10;
 
     public bool loseHp;
@@ -29,13 +24,13 @@ public class CentralTree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(healthPtsTree);
-        if (healthPtsTree <= 0 /*== !deadTree*/)
+
+        if (healthPtsTree >= 10)
         {
-            //deadTree = true;
-            GameplayManager.Instance.ShowGameOver();
-            Destroy(gameObject);
+            healthPtsTree = 10;
         }
+
+        healthBarTree.value = healthPtsTree;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -44,11 +39,13 @@ public class CentralTree : MonoBehaviour
         {
             Destroy(other.gameObject);
             healthPtsTree -= 1;
-            healthBarTree.value -= 1;
+            //healthBarTree.value -= 1;
             mainCam.DOShakePosition(0.8f, 0.3f);
             if (healthPtsTree <= 0)
             {
-                Destroy(gameObject);
+                Destroy(GameplayManager.Instance.centralTree);
+                GameplayManager.Instance.ShowGameOver();
+                Time.timeScale = 0;
             }
         }
         
@@ -56,11 +53,11 @@ public class CentralTree : MonoBehaviour
         {
             Destroy(other.gameObject);
             healthPtsTree -= 1;
-            healthBarTree.value -= 1;
+            //healthBarTree.value -= 1;
             mainCam.DOShakePosition(0.8f, 0.3f);
             if (healthPtsTree <= 0)
             {
-                Destroy(gameObject);
+                Destroy(GameplayManager.Instance.centralTree);
             }
         }
     }

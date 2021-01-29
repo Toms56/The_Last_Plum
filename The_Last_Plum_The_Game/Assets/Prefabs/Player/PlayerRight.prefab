@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 689267080794382794}
   - component: {fileID: 3215363158821664235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 3991710689857105010}
   - component: {fileID: 1675854774}
   - component: {fileID: 1675854777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerRight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ec668271234fb46a5d7e9315996d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 156902202849343210}
+  playerHealthPts: 3
   target: {fileID: 0}
   speed: 2
 --- !u!58 &1675854774
@@ -178,7 +180,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0037087915, y: -0.0039064377}
@@ -194,7 +196,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.114970595, y: -0.28908265}
@@ -219,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791504969133332307}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

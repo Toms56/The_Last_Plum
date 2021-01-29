@@ -7,13 +7,14 @@ using UnityEngine.Assertions.Must;
 public class InvisibleEnnemy : MonoBehaviour
 {
     
+    [SerializeField] private List<GameObject> wayPoints = new List<GameObject>();
     //movement
-    public Transform target;
     public GameObject actualTarget;
     public float speed;
     
     //Health
-    private float healthPts = 2;
+    [SerializeField]
+    private float healthPts = 9;
     
     //RevealSprite
     float Delay;
@@ -27,6 +28,8 @@ public class InvisibleEnnemy : MonoBehaviour
 
     private void Start()
     {
+        wayPoints[0] = GameObject.FindGameObjectWithTag("WayPointTree");
+        actualTarget = wayPoints[0];
         StartCoroutine(Untouchable());
     }
 

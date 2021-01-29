@@ -12,15 +12,13 @@ public class GameplayManager : MonoBehaviour
 
     public GameObject player;
 
-    public CentralTree CentralTree;
+    public CentralTree centralTree;
 
     //Money
     public float currencyFund;
     public Text currencyTxt;
     
-    //public Transform enemyTarget;
     public GameObject enemy;
-    //public GameObject centralTree;
     public List<GameObject>defenseTowers = new List<GameObject>();
     public List<GameObject>enemies = new List<GameObject>();
     
@@ -61,9 +59,15 @@ public class GameplayManager : MonoBehaviour
         panelWonLevel.SetActive(true);
     }
     
+     public void OnClick_Mute() 
+     { 
+         AudioListener.pause = !AudioListener.pause;
+     }
+    
     public void onClick_Retry()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
     
     public void exitGame()

@@ -21,6 +21,9 @@ public class EnemySpawner2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameplayManager.Instance.centralTree == null) 
+        {
+            gameObject.SetActive(false);
+        }   
     }
 }

@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     //Heal 
     [SerializeField]
-    private float playerHealthPts = 3;
+    private float playerHealthPts = 4;
     
     Color willDeath = Color.red;
     
@@ -55,6 +55,11 @@ public class Player : MonoBehaviour
            gameplayManager.currencyFund -= 4;
         }
 
+        if (playerHealthPts == 1)
+        {
+            spriteRenderer.color = Color.red;
+        }
+
         if (playerHealthPts <= 0)
         {
             playerHealthPts = 0; 
@@ -80,7 +85,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "LifeUp")
         {
-            //GameplayManager.Instance.CentralTree.healthPtsTree += 1;
+            GameplayManager.Instance.centralTree.healthPtsTree += 1;
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "SpeedUp")
@@ -92,7 +97,7 @@ public class Player : MonoBehaviour
 
     IEnumerator WaitForWin()
     {
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(60);
         GameplayManager.Instance.ShowWonLevel();
     }
 

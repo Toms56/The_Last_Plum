@@ -101,7 +101,7 @@ MonoBehaviour:
   - {fileID: 6633932574983253940, guid: 211472c5c26ec6c47b06902ce0ed0851, type: 3}
   - {fileID: 7687942974484899947, guid: b4631e072c5d33d43bea52f7c2584550, type: 3}
   healthPts: 6
-  speed: 1
+  speed: 2
 --- !u!50 &2528968933221238772
 Rigidbody2D:
   serializedVersion: 4

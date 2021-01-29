@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTarget: {fileID: 0}
-  range: 6
+  range: 5
   enemyTag: Enemy
-  fireRate: 0.85
+  fireRate: 0.95
   towerBullet: {fileID: 4137683285263809185, guid: d667a1471aecd1140997140860e5bd8f,
     type: 3}
   firePoint: {fileID: 1910571418}
