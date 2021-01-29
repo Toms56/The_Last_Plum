@@ -11,10 +11,11 @@ public class CentralTree : MonoBehaviour
     public Camera mainCam;
 
     [SerializeField]
-    private bool deadTree;
+    //private bool deadTree;
     //Health
-    [SerializeField]
-    private float healthPts = 25;
+    
+    //public static float healthPtsTree = 10;
+    public float healthPtsTree = 10;
 
     public bool loseHp;
 
@@ -22,17 +23,18 @@ public class CentralTree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthBarTree.value = 25;
+        healthBarTree.value = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (healthPts <= 0 == !deadTree)
+        //Debug.Log(healthPtsTree);
+        if (healthPtsTree <= 0 /*== !deadTree*/)
         {
-            deadTree = true;
-            Destroy(gameObject);
+            //deadTree = true;
             GameplayManager.Instance.ShowGameOver();
+            Destroy(gameObject);
         }
     }
 
@@ -41,10 +43,10 @@ public class CentralTree : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             Destroy(other.gameObject);
-            healthPts -= 1;
+            healthPtsTree -= 1;
             healthBarTree.value -= 1;
             mainCam.DOShakePosition(0.8f, 0.3f);
-            if (healthPts <= 0)
+            if (healthPtsTree <= 0)
             {
                 Destroy(gameObject);
             }
@@ -53,10 +55,10 @@ public class CentralTree : MonoBehaviour
         if (other.gameObject.tag == "InvisibleEnemy")
         {
             Destroy(other.gameObject);
-            healthPts -= 1;
+            healthPtsTree -= 1;
             healthBarTree.value -= 1;
             mainCam.DOShakePosition(0.8f, 0.3f);
-            if (healthPts <= 0)
+            if (healthPtsTree <= 0)
             {
                 Destroy(gameObject);
             }

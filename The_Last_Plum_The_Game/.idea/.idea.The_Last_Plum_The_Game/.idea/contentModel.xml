@@ -25,6 +25,8 @@
               <e p="TowerCanon.cs" t="Include" />
             </e>
             <e p="Ennemy" t="Include">
+              <e p="EnemyTank.cs" t="Include" />
+              <e p="EnnemyTest.cs" t="Include" />
               <e p="InvisibleEnnemy.cs" t="Include" />
               <e p="Spawners" t="Include">
                 <e p="EnemySpawner2.cs" t="Include" />
@@ -35,7 +37,7 @@
             </e>
             <e p="Player.cs" t="Include" />
             <e p="Test" t="Include">
-              <e p="EnnemyTest.cs" t="Include" />
+              <e p="TestMove.cs" t="Include" />
             </e>
             <e p="Tree" t="Include">
               <e p="CentralTree.cs" t="Include" />

@@ -1,18 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void onClick_Menu()
     {
-        
+        SceneManager.LoadScene(0);
+    }
+    public void onClick_Play()
+    {
+        SceneManager.LoadScene(1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void onClick_CharactersScene()
     {
-        
+        SceneManager.LoadScene(2);
+    }
+
+    public void onClick_Tuto()
+    {
+        SceneManager.LoadScene(3);
+    }
+    
+    public void exitGame()
+    {
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+        Debug.Log("Game is exiting");
     }
 }

@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Do not shoot Aliens/Game assets/Scenes/Game scene.unity
-    guid: 5b63ebdabb5ddca42b6d94db1ec26ff8
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6c85e15095096cd4d9002fd445d0668e
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CharactersScene.unity
+    guid: caa9b6e5ccb0c664ea062a13756c6ff4
+  - enabled: 1
+    path: Assets/Scenes/KeyboardScene.unity
+    guid: d79eeba8d078dfd478c6b14be28bfcab
   m_configObjects: {}

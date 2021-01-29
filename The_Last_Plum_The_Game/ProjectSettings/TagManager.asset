@@ -11,6 +11,19 @@ TagManager:
   - Money
   - TowerBullet
   - DefenseTower
+  - WayPoint1
+  - WayPoint2
+  - WayPoint3
+  - WayPoint4
+  - WayPoint5
+  - WayPoint6
+  - WayPoint7
+  - WayPoint8
+  - WayPoint9
+  - WayPoint10
+  - SpeedUp
+  - LifeUp
+  - WayPointTree
   layers:
   - Default
   - TransparentFX

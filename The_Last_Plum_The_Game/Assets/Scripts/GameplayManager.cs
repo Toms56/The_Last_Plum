@@ -1,14 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager Instance;
     public GameObject defenseTower;
+
+    public GameObject player;
+
+    public CentralTree CentralTree;
+
+    //Money
+    public float currencyFund;
+    public Text currencyTxt;
+    
+    //public Transform enemyTarget;
     public GameObject enemy;
-    public GameObject centralTree;
+    //public GameObject centralTree;
     public List<GameObject>defenseTowers = new List<GameObject>();
     public List<GameObject>enemies = new List<GameObject>();
     
@@ -29,9 +41,18 @@ public class GameplayManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
+
+    private void Update()
+    {
+        if (player != null)
+        {
+            currencyTxt.text = " " + currencyFund;
+        }
+    }
+
     public void ShowGameOver()
     {
+        Debug.Log("ShowGameOver");
         panelGameOver.SetActive(true);
     }
     

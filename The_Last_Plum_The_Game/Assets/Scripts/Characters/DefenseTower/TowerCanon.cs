@@ -8,7 +8,7 @@ public class TowerCanon : MonoBehaviour
 {
 
     public Transform enemyTarget;
-    public float range = 2f;
+    public float range = 7f;
 
     public string enemyTag = "Enemy";
     
@@ -22,7 +22,7 @@ public class TowerCanon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget",0f,0.5f);
+        InvokeRepeating("UpdateTarget",0f,0.1f);
     }
 
     void UpdateTarget()
@@ -39,15 +39,15 @@ public class TowerCanon : MonoBehaviour
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
-
-            if (nearestEnemy != null == shortestDistance <= range)
-            {
-                enemyTarget = nearestEnemy.transform;
-            }
-            else
-            {
-                enemyTarget = null;
-            }
+        }
+        if (nearestEnemy != null && shortestDistance <= range)
+        {
+            
+            enemyTarget = nearestEnemy.transform;
+        }
+        else
+        {
+            enemyTarget = null;
         }
     }
 

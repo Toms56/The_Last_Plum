@@ -11,7 +11,7 @@ public class TreeSpawner3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnPowerUp",8f,5f);
+        InvokeRepeating("SpawnPowerUp",8f,8f);
     }
 
     // Update is called once per frame
@@ -27,12 +27,12 @@ public class TreeSpawner3 : MonoBehaviour
 
         }
 
-        if (transform.position.y <= -2)
+        if (transform.position.y <= -1)
         {
             moveUp = true;
         }
 
-        if (transform.position.y >= 2)
+        if (transform.position.y >= 1)
         {
             moveUp = false;
         }

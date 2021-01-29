@@ -56,7 +56,7 @@ public class DefenseTower : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -64,11 +64,11 @@ public class DefenseTower : MonoBehaviour
             StartShooting();
             //GameObject towerBulletObject = Instantiate(towerBullet, transform.position, Quaternion.identity);
         }
-    }
+    }*/
 
-    private void OnTriggerExit2D(Collider2D other)
+    /*private void OnTriggerExit2D(Collider2D other)
     {
         isShooting = false;
         StopShooting();
-    }
+    }*/
 }

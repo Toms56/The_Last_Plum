@@ -39,18 +39,25 @@ public class InvisibleEnnemy : MonoBehaviour
         {
             GameObject.Destroy(gameObject);
         }
+        float step = speed * Time.deltaTime;
         if (Vector3.Distance(transform.position, actualTarget.transform.position) > 0.1f)
         {
-            Vector3 dir = actualTarget.transform.position - transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.Translate(Vector3.right * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, actualTarget.transform.position, step);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "PlayerBullet")
+        {
+            healthPts -= 1;
+            if (healthPts <= 0)
+            {
+                Destroy(gameObject);
+            }
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "TowerBullet")
         {
             healthPts -= 1;
             if (healthPts <= 0)
